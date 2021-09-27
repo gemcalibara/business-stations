@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import './App.css'
+import Login from '../src/components/Login'
+import Home from '../src/components/Home'
 
-function App() {
+function App () {
+  const NoMatchPage = () => {
+    return (
+      <h3>404 - Not found</h3>
+    )
+  }
+
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/Home" component={Home} />
+        <Route exact path="/" component={Login} />
+        <Route component={NoMatchPage} />
+      </Switch>
     </div>
-  );
+  </Router>
+  )
 }
 
-export default App;
+export default App
