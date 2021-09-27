@@ -1,6 +1,23 @@
+# Screenshots of PriceLOCQ for Business Stations
+![image](https://user-images.githubusercontent.com/78527882/134897261-4f99494f-3f7a-4aa9-80d6-e5dc0b422c9f.png)
+
+![image](https://user-images.githubusercontent.com/78527882/134897446-f201bb1d-5352-4de1-8a10-b527439e06b9.png)
+
+# Tech Stacks
+
+* ReactJS
+* Material-UI CSS Framework
+* API provided by PriceLOCQ
+* DotEnv for Environment Variable
+* Eslint and Prettier
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Environment Variable
+
+#`VERY IMPORTANT :` Please rename the .env.example file to .env in order to setup the environment variable properly.
 
 ## Available Scripts
 
