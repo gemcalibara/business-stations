@@ -4,13 +4,13 @@ import './App.css'
 import Login from '../src/components/Login'
 import Home from '../src/components/Home'
 
-function App () {
-  const NoMatchPage = () => {
-    return (
-      <h3>404 - Not found</h3>
-    )
-  }
+const NoMatchPage = () => {
+  return (
+    <h3>404 - Not found</h3>
+  )
+}
 
+function App () {
   return (
     <Router>
     <div className="App">
