@@ -12,7 +12,6 @@ import {
   TableRow,
   Typography
 } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
 import CheckIcon from '@material-ui/icons/Check'
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord'
 import SearchBar from 'material-ui-search-bar'
@@ -30,13 +29,6 @@ const TableContents = ({ stations }) => {
   const handlePageChange = (event, newPage) => {
     setPage(newPage)
   }
-
-  // eslint-disable-next-line no-unused-vars
-  const useStyles = makeStyles({
-    table: {
-      minWidth: 600
-    }
-  })
 
   const [rows, setRows] = useState([])
   const [searched, setSearched] = useState('')
@@ -78,8 +70,12 @@ const TableContents = ({ stations }) => {
 
   return (
     <>
-    <h1 style={{ color: 'rgb(63, 81, 182)', textAlign: 'left', marginLeft: '0px' }}>PriceLOCQ for Business Stations</h1>
-    <p style={{ color: '#7d7f88', fontSize: '16px', marginTop: '5px', marginBottom: '30px', textAlign: 'left', marginLeft: '0px' }}>View list of stations.</p>
+    <h1 style={{ color: 'rgb(63, 81, 182)', textAlign: 'left', marginLeft: '0px' }}>
+      PriceLOCQ for Business Stations
+    </h1>
+    <p style={{ color: '#7d7f88', fontSize: '16px', marginTop: '5px', marginBottom: '30px', textAlign: 'left', marginLeft: '0px' }}>
+      View list of stations.
+    </p>
     <SearchBar
       value={searched}
       onChange={(searchVal) => requestSearch(searchVal)}
@@ -139,7 +135,7 @@ const TableContents = ({ stations }) => {
                   <TableCell style={{ fontWeight: 'bold', fontSize: '12px' }}>
                     {station.city.trim().toLowerCase().replace(/^\w/, c => c.toUpperCase())} <br/>
                     <p style={{ fontSize: '12px', fontWeight: '400', marginTop: '-2px', color: '#a1a1a1' }}>
-                        {station.province.trim().toLowerCase().replace(/^\w/, c => c.toUpperCase())}
+                      {station.province.trim().toLowerCase().replace(/^\w/, c => c.toUpperCase())}
                     </p>
                   </TableCell>
                   <TableCell>

@@ -5,7 +5,7 @@ const Logo = () => {
   return (
         <div>
             <Grid style={{ textAlign: 'center' }}>
-                <img src={process.env.REACT_APP_LOGO} alt="Logo"/>
+              <img src={process.env.REACT_APP_LOGO} alt="Logo"/>
           </Grid>
         </div>
   )

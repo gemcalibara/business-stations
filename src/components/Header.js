@@ -12,8 +12,7 @@ const Header = ({ accessToken }) => {
   const loggedUser = localStorage.getItem('users')
 
   const logout = () => {
-    localStorage.removeItem('users')
-    localStorage.removeItem('accessToken')
+    localStorage.clear()
     history.push('/')
   }
 

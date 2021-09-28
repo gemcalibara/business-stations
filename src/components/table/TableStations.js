@@ -4,6 +4,7 @@ import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { makeStyles } from '@material-ui/core/styles'
 import TableContents from './TableContents'
+import AlertMessage from '../AlertMessage'
 import axios from 'axios'
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +18,7 @@ const TableStations = () => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
   const [stations, setStations] = useState([])
+  const [alertMessage, setAlertMessage] = useState('')
   const params = {
     page: 1,
     perPage: 20
@@ -36,7 +38,8 @@ const TableStations = () => {
           setStations(response.data.data.stations)
         })
         .catch(error => {
-          throw error
+          console.error({ errorMessage: error.message })
+          setAlertMessage({ msg: 'API Error', key: Math.random() })
         })
 
       const timer = setTimeout(() => {
@@ -63,6 +66,7 @@ const TableStations = () => {
         <Backdrop className={classes.backdrop} open={open}>
             <CircularProgress color="inherit" />
         </Backdrop>
+        { alertMessage ? <AlertMessage key={alertMessage.key} message={alertMessage.msg} /> : null }
     </>
   )
 }
