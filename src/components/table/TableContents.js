@@ -133,9 +133,9 @@ const TableContents = ({ stations }) => {
                     </Box>
                   </TableCell>
                   <TableCell style={{ fontWeight: 'bold', fontSize: '12px' }}>
-                    {station.city.trim().toLowerCase().replace(/^\w/, c => c.toUpperCase())} <br/>
+                    {station.city.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))} <br/>
                     <p style={{ fontSize: '12px', fontWeight: '400', marginTop: '-2px', color: '#a1a1a1' }}>
-                      {station.province.trim().toLowerCase().replace(/^\w/, c => c.toUpperCase())}
+                      {station.province.trim().toLowerCase().replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))}
                     </p>
                   </TableCell>
                   <TableCell>
