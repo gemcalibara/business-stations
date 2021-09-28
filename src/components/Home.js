@@ -4,11 +4,10 @@ import TableStations from './table/TableStations'
 
 const Home = () => {
   const token = typeof window !== 'undefined' ? localStorage.getItem('accessToken') : null
-  // eslint-disable-next-line no-unused-vars
-  const [accessToken, setAccessToken] = useState(token)
+  const [accessToken, setAccessToken] = useState()
 
   useEffect(() => {
-    if (token === null) {
+    if (setAccessToken(token) === null) {
       location.href = '/'
     }
   }, [])

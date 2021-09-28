@@ -4,7 +4,6 @@ import Backdrop from '@material-ui/core/Backdrop'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { makeStyles } from '@material-ui/core/styles'
 import TableContents from './TableContents'
-import TableHeader from './TableHeader'
 import axios from 'axios'
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const TableStation = () => {
+const TableStations = () => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
   const [stations, setStations] = useState([])
@@ -56,7 +55,6 @@ const TableStation = () => {
         }}
         >
         <Container maxWidth={false}>
-            <TableHeader />
             <Box sx={{ pt: 3 }}>
                 <TableContents stations={stations} />
             </Box>
@@ -69,4 +67,4 @@ const TableStation = () => {
   )
 }
 
-export default TableStation
+export default TableStations

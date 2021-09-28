@@ -1,9 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Button } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 import Logo from './Logo'
 
-// eslint-disable-next-line react/prop-types
 const Header = ({ accessToken }) => {
   const btnstyle = { margin: '3px 0' }
 
@@ -30,6 +30,10 @@ const Header = ({ accessToken }) => {
   } else {
     return null
   }
+}
+
+Header.propTypes = {
+  accessToken: PropTypes.string
 }
 
 export default Header

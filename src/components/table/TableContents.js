@@ -78,6 +78,8 @@ const TableContents = ({ stations }) => {
 
   return (
     <>
+    <h1 style={{ color: 'rgb(63, 81, 182)', textAlign: 'left', marginLeft: '0px' }}>PriceLOCQ for Business Stations</h1>
+    <p style={{ color: '#7d7f88', fontSize: '16px', marginTop: '5px', marginBottom: '30px', textAlign: 'left', marginLeft: '0px' }}>View list of stations.</p>
     <SearchBar
       value={searched}
       onChange={(searchVal) => requestSearch(searchVal)}
